@@ -1,0 +1,11 @@
+*.log
+*.jou
+*.backup.*
+*.pb
+*.wdb
+*.dmp
+xsim.dir/
+.cache/
+.hw/
+.ip_user_files/
+.Xil
