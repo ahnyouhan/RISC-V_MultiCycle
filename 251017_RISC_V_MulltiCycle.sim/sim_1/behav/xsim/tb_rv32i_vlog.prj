@@ -1,0 +1,15 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  \
+"../../../../251017_RISC_V_MulltiCycle.srcs/sources_1/imports/code/CPU_RV32I.sv" \
+"../../../../251017_RISC_V_MulltiCycle.srcs/sources_1/imports/code/ControlUnit.sv" \
+"../../../../251017_RISC_V_MulltiCycle.srcs/sources_1/imports/code/DataPath.sv" \
+"../../../../251017_RISC_V_MulltiCycle.srcs/sources_1/imports/code/MCU.sv" \
+"../../../../251017_RISC_V_MulltiCycle.srcs/sources_1/imports/code/RAM.sv" \
+"../../../../251017_RISC_V_MulltiCycle.srcs/sources_1/imports/code/ROM.sv" \
+"../../../../251017_RISC_V_MulltiCycle.srcs/sim_1/new/tb.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
