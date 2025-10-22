@@ -13,10 +13,10 @@
 `define SRLI 4'b0101
 `define SRAI 4'b1101
 
-`define BEQ  3'b000
-`define BNE  3'b001
-`define BLT  3'b100
-`define BGE  3'b101
+`define BEQ 3'b000
+`define BNE 3'b001
+`define BLT 3'b100
+`define BGE 3'b101
 `define BLTU 3'b110
 `define BGEU 3'b111
 
@@ -27,5 +27,5 @@
 `define OP_TYPE_B 7'b1100011
 `define OP_TYPE_LU 7'b0110111
 `define OP_TYPE_AU 7'b0010111
-`define OP_TYPE_J  7'b1101111
+`define OP_TYPE_J 7'b1101111
 `define OP_TYPE_JL 7'b1100111

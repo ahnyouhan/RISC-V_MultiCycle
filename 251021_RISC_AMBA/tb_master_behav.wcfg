@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_master_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_master" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="1000001fs"></ZoomEndTime>
+      <Cursor1Time time="1000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="194"></NameColumnWidth>
+      <ValueColumnWidth column_width="65"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="72" />
+   <wvobject fp_name="/tb_master/PCLK" type="logic">
+      <obj_property name="ElementShortName">PCLK</obj_property>
+      <obj_property name="ObjectShortName">PCLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/PRESET" type="logic">
+      <obj_property name="ElementShortName">PRESET</obj_property>
+      <obj_property name="ObjectShortName">PRESET</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/DUT/PCLK" type="logic">
+      <obj_property name="ElementShortName">PCLK</obj_property>
+      <obj_property name="ObjectShortName">PCLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/DUT/PRESET" type="logic">
+      <obj_property name="ElementShortName">PRESET</obj_property>
+      <obj_property name="ObjectShortName">PRESET</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/DUT/PADDR" type="array">
+      <obj_property name="ElementShortName">PADDR[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PADDR[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/DUT/PWRITE" type="logic">
+      <obj_property name="ElementShortName">PWRITE</obj_property>
+      <obj_property name="ObjectShortName">PWRITE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/DUT/PENABLE" type="logic">
+      <obj_property name="ElementShortName">PENABLE</obj_property>
+      <obj_property name="ObjectShortName">PENABLE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/DUT/PWDATA" type="array">
+      <obj_property name="ElementShortName">PWDATA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PWDATA[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/DUT/PSEL0" type="logic">
+      <obj_property name="ElementShortName">PSEL0</obj_property>
+      <obj_property name="ObjectShortName">PSEL0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/DUT/PSEL1" type="logic">
+      <obj_property name="ElementShortName">PSEL1</obj_property>
+      <obj_property name="ObjectShortName">PSEL1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/DUT/PSEL2" type="logic">
+      <obj_property name="ElementShortName">PSEL2</obj_property>
+      <obj_property name="ObjectShortName">PSEL2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/DUT/PSEL3" type="logic">
+      <obj_property name="ElementShortName">PSEL3</obj_property>
+      <obj_property name="ObjectShortName">PSEL3</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/DUT/PRDATA0" type="array">
+      <obj_property name="ElementShortName">PRDATA0[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PRDATA0[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/DUT/PRDATA1" type="array">
+      <obj_property name="ElementShortName">PRDATA1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PRDATA1[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/DUT/PRDATA2" type="array">
+      <obj_property name="ElementShortName">PRDATA2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PRDATA2[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/DUT/PRDATA3" type="array">
+      <obj_property name="ElementShortName">PRDATA3[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PRDATA3[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/DUT/PREADY0" type="logic">
+      <obj_property name="ElementShortName">PREADY0</obj_property>
+      <obj_property name="ObjectShortName">PREADY0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/DUT/PREADY1" type="logic">
+      <obj_property name="ElementShortName">PREADY1</obj_property>
+      <obj_property name="ObjectShortName">PREADY1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/DUT/PREADY2" type="logic">
+      <obj_property name="ElementShortName">PREADY2</obj_property>
+      <obj_property name="ObjectShortName">PREADY2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/DUT/PREADY3" type="logic">
+      <obj_property name="ElementShortName">PREADY3</obj_property>
+      <obj_property name="ObjectShortName">PREADY3</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/DUT/transfer" type="logic">
+      <obj_property name="ElementShortName">transfer</obj_property>
+      <obj_property name="ObjectShortName">transfer</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/DUT/write" type="logic">
+      <obj_property name="ElementShortName">write</obj_property>
+      <obj_property name="ObjectShortName">write</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/DUT/addr" type="array">
+      <obj_property name="ElementShortName">addr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">addr[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/DUT/wdata" type="array">
+      <obj_property name="ElementShortName">wdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">wdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/DUT/rdata" type="array">
+      <obj_property name="ElementShortName">rdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/DUT/ready" type="logic">
+      <obj_property name="ElementShortName">ready</obj_property>
+      <obj_property name="ObjectShortName">ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/DUT/decoder_en" type="logic">
+      <obj_property name="ElementShortName">decoder_en</obj_property>
+      <obj_property name="ObjectShortName">decoder_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/DUT/mux_sel" type="array">
+      <obj_property name="ElementShortName">mux_sel[1:0]</obj_property>
+      <obj_property name="ObjectShortName">mux_sel[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/DUT/temp_write_reg" type="logic">
+      <obj_property name="ElementShortName">temp_write_reg</obj_property>
+      <obj_property name="ObjectShortName">temp_write_reg</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/DUT/temp_write_next" type="logic">
+      <obj_property name="ElementShortName">temp_write_next</obj_property>
+      <obj_property name="ObjectShortName">temp_write_next</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/DUT/temp_addr_reg" type="array">
+      <obj_property name="ElementShortName">temp_addr_reg[31:0]</obj_property>
+      <obj_property name="ObjectShortName">temp_addr_reg[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/DUT/temp_addr_next" type="array">
+      <obj_property name="ElementShortName">temp_addr_next[31:0]</obj_property>
+      <obj_property name="ObjectShortName">temp_addr_next[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/DUT/temp_wdata_reg" type="array">
+      <obj_property name="ElementShortName">temp_wdata_reg[31:0]</obj_property>
+      <obj_property name="ObjectShortName">temp_wdata_reg[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/DUT/temp_wdata_next" type="array">
+      <obj_property name="ElementShortName">temp_wdata_next[31:0]</obj_property>
+      <obj_property name="ObjectShortName">temp_wdata_next[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/DUT/pselx" type="array">
+      <obj_property name="ElementShortName">pselx[3:0]</obj_property>
+      <obj_property name="ObjectShortName">pselx[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/DUT/state" type="array">
+      <obj_property name="ElementShortName">state[31:0]</obj_property>
+      <obj_property name="ObjectShortName">state[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider68">
+      <obj_property name="label">SLAVE1</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/U_P1/PADDR" type="array">
+      <obj_property name="ElementShortName">PADDR[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PADDR[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/U_P1/PWRITE" type="logic">
+      <obj_property name="ElementShortName">PWRITE</obj_property>
+      <obj_property name="ObjectShortName">PWRITE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/U_P1/PENABLE" type="logic">
+      <obj_property name="ElementShortName">PENABLE</obj_property>
+      <obj_property name="ObjectShortName">PENABLE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/U_P1/PWDATA" type="array">
+      <obj_property name="ElementShortName">PWDATA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PWDATA[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/U_P1/PSEL" type="logic">
+      <obj_property name="ElementShortName">PSEL</obj_property>
+      <obj_property name="ObjectShortName">PSEL</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/U_P1/PRDATA" type="array">
+      <obj_property name="ElementShortName">PRDATA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PRDATA[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/U_P1/PREADY" type="logic">
+      <obj_property name="ElementShortName">PREADY</obj_property>
+      <obj_property name="ObjectShortName">PREADY</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/U_P1/mem" type="array">
+      <obj_property name="ElementShortName">mem[0:4095][7:0]</obj_property>
+      <obj_property name="ObjectShortName">mem[0:4095][7:0]</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider79">
+      <obj_property name="label">SLAVE2</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/U_P2/PADDR" type="array">
+      <obj_property name="ElementShortName">PADDR[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PADDR[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/U_P2/PWRITE" type="logic">
+      <obj_property name="ElementShortName">PWRITE</obj_property>
+      <obj_property name="ObjectShortName">PWRITE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/U_P2/PENABLE" type="logic">
+      <obj_property name="ElementShortName">PENABLE</obj_property>
+      <obj_property name="ObjectShortName">PENABLE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/U_P2/PWDATA" type="array">
+      <obj_property name="ElementShortName">PWDATA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PWDATA[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/U_P2/PSEL" type="logic">
+      <obj_property name="ElementShortName">PSEL</obj_property>
+      <obj_property name="ObjectShortName">PSEL</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/U_P2/PRDATA" type="array">
+      <obj_property name="ElementShortName">PRDATA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PRDATA[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/U_P2/PREADY" type="logic">
+      <obj_property name="ElementShortName">PREADY</obj_property>
+      <obj_property name="ObjectShortName">PREADY</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/U_P2/mem" type="array">
+      <obj_property name="ElementShortName">mem[0:4095][7:0]</obj_property>
+      <obj_property name="ObjectShortName">mem[0:4095][7:0]</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider92">
+      <obj_property name="label">SLAVE3</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/U_P3/PADDR" type="array">
+      <obj_property name="ElementShortName">PADDR[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PADDR[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/U_P3/PWRITE" type="logic">
+      <obj_property name="ElementShortName">PWRITE</obj_property>
+      <obj_property name="ObjectShortName">PWRITE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/U_P3/PENABLE" type="logic">
+      <obj_property name="ElementShortName">PENABLE</obj_property>
+      <obj_property name="ObjectShortName">PENABLE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/U_P3/PWDATA" type="array">
+      <obj_property name="ElementShortName">PWDATA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PWDATA[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/U_P3/PSEL" type="logic">
+      <obj_property name="ElementShortName">PSEL</obj_property>
+      <obj_property name="ObjectShortName">PSEL</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/U_P3/PRDATA" type="array">
+      <obj_property name="ElementShortName">PRDATA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PRDATA[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/U_P3/PREADY" type="logic">
+      <obj_property name="ElementShortName">PREADY</obj_property>
+      <obj_property name="ObjectShortName">PREADY</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/U_P3/mem" type="array">
+      <obj_property name="ElementShortName">mem[0:4095][7:0]</obj_property>
+      <obj_property name="ObjectShortName">mem[0:4095][7:0]</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider103">
+      <obj_property name="label">RAM</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/U_RAM/PADDR" type="array">
+      <obj_property name="ElementShortName">PADDR[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PADDR[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/U_RAM/PWRITE" type="logic">
+      <obj_property name="ElementShortName">PWRITE</obj_property>
+      <obj_property name="ObjectShortName">PWRITE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/U_RAM/PENABLE" type="logic">
+      <obj_property name="ElementShortName">PENABLE</obj_property>
+      <obj_property name="ObjectShortName">PENABLE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/U_RAM/PWDATA" type="array">
+      <obj_property name="ElementShortName">PWDATA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PWDATA[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/U_RAM/PSEL" type="logic">
+      <obj_property name="ElementShortName">PSEL</obj_property>
+      <obj_property name="ObjectShortName">PSEL</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/U_RAM/PRDATA" type="array">
+      <obj_property name="ElementShortName">PRDATA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PRDATA[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/U_RAM/PREADY" type="logic">
+      <obj_property name="ElementShortName">PREADY</obj_property>
+      <obj_property name="ObjectShortName">PREADY</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_master/U_RAM/mem" type="array">
+      <obj_property name="ElementShortName">mem[0:4095][7:0]</obj_property>
+      <obj_property name="ObjectShortName">mem[0:4095][7:0]</obj_property>
+   </wvobject>
+</wave_config>

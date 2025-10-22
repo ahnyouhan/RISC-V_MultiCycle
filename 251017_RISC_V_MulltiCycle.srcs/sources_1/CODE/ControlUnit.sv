@@ -5,19 +5,19 @@ module ControlUnit (
     // global signals
     input  logic        clk,
     input  logic        reset,
-    //ROM side port 
+    // ROM side port
     input  logic [31:0] instrCode,
     // data path side port
     output logic        PCEn,
     output logic        regFileWe,
     output logic        aluSrcMuxSel,
     output logic [ 3:0] aluControl,
-    output logic [ 2:0] strb,
     output logic [ 2:0] RFWDSrcMuxSel,
     output logic        branch,
     output logic        jal,
     output logic        jalr,
-    // data memory sideport 
+    // data memory side port
+    output logic [ 2:0] strb,
     output logic        busWe
 );
     wire  [6:0] opcode = instrCode[6:0];
@@ -45,6 +45,7 @@ module ControlUnit (
     } state_e;
 
     state_e state, next_state;
+
     always_ff @(posedge clk, posedge reset) begin
         if (reset) begin
             state <= FETCH;
@@ -56,14 +57,15 @@ module ControlUnit (
     always_comb begin
         next_state = state;
         case (state)
-            FETCH: next_state = DECODE;
+            FETCH:  next_state = DECODE;
             DECODE: begin
+                next_state = R_EXE;
                 case (opcode)
                     `OP_TYPE_R:  next_state = R_EXE;
                     `OP_TYPE_I:  next_state = I_EXE;
                     `OP_TYPE_B:  next_state = B_EXE;
-                    `OP_TYPE_AU: next_state = LU_EXE;
-                    `OP_TYPE_LU: next_state = AU_EXE;
+                    `OP_TYPE_LU: next_state = LU_EXE;
+                    `OP_TYPE_AU: next_state = AU_EXE;
                     `OP_TYPE_J:  next_state = J_EXE;
                     `OP_TYPE_JL: next_state = JL_EXE;
                     `OP_TYPE_S:  next_state = S_EXE;
@@ -74,15 +76,13 @@ module ControlUnit (
             I_EXE:  next_state = FETCH;
             B_EXE:  next_state = FETCH;
             LU_EXE: next_state = FETCH;
-            AU_EXE: next_state = FETCH; 
+            AU_EXE: next_state = FETCH;
             J_EXE:  next_state = FETCH;
             JL_EXE: next_state = FETCH;
             S_EXE:  next_state = S_MEM;
-            L_EXE:  next_state = L_MEM;
-
             S_MEM:  next_state = FETCH;
+            L_EXE:  next_state = L_MEM;
             L_MEM:  next_state = L_WB;
-
             L_WB:   next_state = FETCH;
         endcase
     end
@@ -112,11 +112,9 @@ module ControlUnit (
             J_EXE:  signals = 10'b0_1_0_0_100_0_1_0;
             JL_EXE: signals = 10'b0_1_0_0_100_0_1_1;
             S_EXE:  signals = 10'b0_0_1_0_000_0_0_0;
-            L_EXE:  signals = 10'b0_0_1_0_001_0_0_0;
-
             S_MEM:  signals = 10'b0_0_1_1_000_0_0_0;
+            L_EXE:  signals = 10'b0_0_1_0_001_0_0_0;
             L_MEM:  signals = 10'b0_0_1_0_001_0_0_0;
-
             L_WB:   signals = 10'b0_1_1_0_001_0_0_0;
         endcase
     end
@@ -125,7 +123,7 @@ module ControlUnit (
     always_comb begin
         signals = 9'b0;
         case (opcode)
-            //{regFileWe, aluSrcMuxSel, dataWe, RFWDSrcMuxSel(3), branch, jal} 
+            //{regFileWe, aluSrcMuxSel, dataWe, RFWDSrcMuxSel(3), branch, jal, jalr} 
             `OP_TYPE_R:  signals = 9'b1_0_0_000_0_0_0;
             `OP_TYPE_I:  signals = 9'b1_1_0_000_0_0_0;
             `OP_TYPE_S:  signals = 9'b0_1_1_000_0_0_0;
@@ -135,7 +133,6 @@ module ControlUnit (
             `OP_TYPE_AU: signals = 9'b1_0_0_011_0_0_0;
             `OP_TYPE_J:  signals = 9'b1_0_0_100_0_1_0;
             `OP_TYPE_JL: signals = 9'b1_0_0_100_0_1_1;
-
         endcase
     end
 
@@ -149,6 +146,6 @@ module ControlUnit (
                 else aluControl = {1'b0, operator[2:0]};
             end
         endcase
-    end*/
+    end
+    */
 endmodule
-
