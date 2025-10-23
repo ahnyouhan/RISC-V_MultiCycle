@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-interface apb_master_if (
+interface apbSignalTester_if (
     input logic clk,
     input logic reset
 );
@@ -11,45 +11,82 @@ interface apb_master_if (
     logic [31:0] rdata;
     logic        ready;
 endinterface
+
+class transaction;
+    logic       transfer;
+    logic       write;
+    rand logic [31:0] addr;
+    rand logic [31:0] wdata;
+    logic [31:0] rdata;
+
+    constraint c_addr {
+        addr inside {
+            [32'h1000_0000:32'h1000_000c],
+            [32'h1000_1000:32'h1000_100c],
+            [32'h1000_2000:32'h1000_200c],
+            [32'h1000_3000:32'h1000_300c]
+        };
+        addr % 4 ==0;
+    }
+
+    task print(string tag);
+        $display("%0t [%s], transfer = %h, write = %h, addr = %h, wdata = %h, rdata = %h", $time, tag, transfer, write, addr, wdata, rdata);
+    endtask //
+endclass //transaction
+
 class apbSignal;
-    logic                        transfer;
-    logic                        write;
-    rand logic                 [31:0] addr;
-    rand logic            [31:0] wdata;
-    // logic                 [31:0] rdata;
-    // logic                        ready;
-    constraint c_addr{
-        addr inside {[32'h1000_0000:32'h1000_000c]};
-    }
-    constraint c_wdata{
-        wdata inside {[32'h00000000:32'hFFFFFFFF]};
-    }
-    virtual apb_master_if        m_if;
-    function new(virtual apb_master_if m_if);
+    transaction tr;
+    virtual apbSignalTester_if m_if;
+
+    function new(virtual apbSignalTester_if m_if);
         this.m_if = m_if;
+        this.tr = new();
     endfunction  //new()
 
-    task automatic send(logic [31:0] addr);
-        m_if.transfer <= 1'b1;
-        m_if.write    <= 1'b1;
-        m_if.addr     <= addr;
-        m_if.wdata    <= wdata;
+    task automatic send();
+        tr.transfer = 1'b1;
+        tr.write = 1'b1;
+        m_if.transfer <= tr.transfer;
+        m_if.write    <= tr.write;
+        m_if.addr     <= tr.addr;
+        m_if.wdata    <= tr.wdata;
         @(posedge m_if.clk);
         m_if.transfer <= 1'b0;
         @(posedge m_if.clk);
         wait (m_if.ready);
+        tr.print("   SEND");
         @(posedge m_if.clk);
     endtask
-    task automatic receive(logic [31:0] addr);
-        m_if.transfer <= 1'b1;
-        m_if.write <= 1'b0;
-        m_if.addr <= addr;
+    task automatic receive();
+        tr.transfer = 1'b1;
+        tr.write = 1'b0;
+        m_if.transfer <= tr.transfer;
+        m_if.write <= tr.write;
+        m_if.addr <= tr.addr;
         @(posedge m_if.clk);
         m_if.transfer <= 1'b0;
         @(posedge m_if.clk);
         wait (m_if.ready);
+        tr.rdata = m_if.rdata;
+        tr.print("RECEIVE");
         @(posedge m_if.clk);
-    endtask  //automatic
+    endtask
+    task automatic compare();
+        if(tr.wdata == tr.rdata) begin
+            $display("PASS!");
+        end else begin
+            $display("FAIL..");
+        end
+    endtask //automatic
+    task automatic run(int loop);
+        repeat(loop) begin
+            tr.randomize();   
+            send();
+            receive();
+            compare();        
+        end
+        
+    endtask
 
 
 
@@ -81,14 +118,10 @@ module tb_APB ();
     logic        PREADY2;
     logic        PREADY3;
 
-    apb_master_if m_if (
+    apbSignalTester_if m_if (
         PCLK,
         PRESET
     );
-
-    apbSignal apbUART;  // handler
-    apbSignal apbGPIO;  // handler
-    apbSignal apbTimer;  // handler
 
     APB_Manager dut_manager (
         .*,
@@ -132,24 +165,14 @@ module tb_APB ();
         #10 PRESET = 0;
     end
 
+    apbSignal apbSignalTester;  // handler
+
     initial begin
-        apbUART  = new(m_if);
-        apbGPIO  = new(m_if);
-        apbTimer = new(m_if);
+        apbSignalTester = new(m_if);
+
 
         repeat (3) @(posedge PCLK);
-
-        apbUART.randomize();
-        apbUART.send(32'h1000_0000);
-        apbUART.receive(32'h1000_0000);
-
-        apbGPIO.randomize();
-        apbGPIO.send(32'h1000_1000);
-        apbGPIO.receive(32'h1000_1000);
-
-        apbTimer.randomize();
-        apbTimer.send(32'h1000_2000);
-        apbTimer.receive(32'h1000_2000);
+        apbSignalTester.run(100);
 
         @(posedge PCLK);
         #20;
